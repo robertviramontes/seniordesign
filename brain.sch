@@ -9696,6 +9696,10 @@ Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
 </part>
 <part name="IC1" library="v-reg" deviceset="LP2950?*" device="ACZ" technology="-3.3"/>
 <part name="IC2" library="v-reg" deviceset="LP2950?*" device="ACZ" technology="-3.3"/>
+<part name="C5" library="rcl" deviceset="C-US" device="050-025X075" value="bypass"/>
+<part name="C6" library="rcl" deviceset="C-US" device="050-025X075" value="bypass"/>
+<part name="U5" library="SparkFun-DigitalIC" deviceset="ATTINY45" device="TINY45-20-DIP" value="TINY45-20-DIP"/>
+<part name="U6" library="SparkFun-DigitalIC" deviceset="ATTINY45" device="TINY45-20-DIP" value="TINY45-20-DIP"/>
 </parts>
 <sheets>
 <sheet>
@@ -9737,28 +9741,15 @@ Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
 </instance>
 <instance part="IC1" gate="G$1" x="15.24" y="25.4"/>
 <instance part="IC2" gate="G$1" x="25.4" y="-119.38"/>
+<instance part="C5" gate="G$1" x="0" y="22.86"/>
+<instance part="C6" gate="G$1" x="10.16" y="-121.92"/>
+<instance part="U5" gate="G$1" x="86.36" y="-190.5"/>
+<instance part="U6" gate="G$1" x="35.56" y="-35.56"/>
 </instances>
 <busses>
 </busses>
 <nets>
-<net name="N$3" class="0">
-<segment>
-<wire x1="157.48" y1="-35.56" x2="147.32" y2="-35.56" width="0.1524" layer="91"/>
-<pinref part="R2" gate="G$1" pin="1"/>
-<wire x1="114.3" y1="-12.7" x2="114.3" y2="-17.78" width="0.1524" layer="91"/>
-<wire x1="114.3" y1="-17.78" x2="147.32" y2="-17.78" width="0.1524" layer="91"/>
-<wire x1="147.32" y1="-17.78" x2="147.32" y2="-33.02" width="0.1524" layer="91"/>
-<pinref part="U3" gate="G$1" pin="RIGHT"/>
-<wire x1="147.32" y1="-33.02" x2="147.32" y2="-35.56" width="0.1524" layer="91"/>
-<wire x1="134.62" y1="-33.02" x2="147.32" y2="-33.02" width="0.1524" layer="91"/>
-<junction x="147.32" y="-33.02"/>
-<pinref part="U1" gate="G$1" pin="PB1(MISO)"/>
-<wire x1="83.82" y1="-5.08" x2="91.44" y2="-5.08" width="0.1524" layer="91"/>
-<wire x1="91.44" y1="-5.08" x2="91.44" y2="-12.7" width="0.1524" layer="91"/>
-<wire x1="91.44" y1="-12.7" x2="114.3" y2="-12.7" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$2" class="0">
+<net name="PB21" class="0">
 <segment>
 <wire x1="134.62" y1="-10.16" x2="142.24" y2="-10.16" width="0.1524" layer="91"/>
 <wire x1="142.24" y1="-10.16" x2="157.48" y2="-10.16" width="0.1524" layer="91"/>
@@ -9771,22 +9762,9 @@ Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
 <wire x1="83.82" y1="-7.62" x2="93.98" y2="-7.62" width="0.1524" layer="91"/>
 <wire x1="93.98" y1="-7.62" x2="93.98" y2="0" width="0.1524" layer="91"/>
 </segment>
-</net>
-<net name="N$4" class="0">
 <segment>
-<wire x1="88.9" y1="-15.24" x2="99.06" y2="-15.24" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="-15.24" x2="99.06" y2="-25.4" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="-25.4" x2="134.62" y2="-25.4" width="0.1524" layer="91"/>
-<wire x1="134.62" y1="-25.4" x2="134.62" y2="-30.48" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="-15.24" x2="99.06" y2="-2.54" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="-2.54" x2="134.62" y2="-2.54" width="0.1524" layer="91"/>
-<wire x1="134.62" y1="-2.54" x2="134.62" y2="-7.62" width="0.1524" layer="91"/>
-<junction x="99.06" y="-15.24"/>
-<pinref part="U2" gate="G$1" pin="SLEEVE"/>
-<pinref part="U3" gate="G$1" pin="SLEEVE"/>
-<pinref part="U1" gate="G$1" pin="PB0(MOSI)"/>
-<wire x1="83.82" y1="-2.54" x2="88.9" y2="-2.54" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="-2.54" x2="88.9" y2="-15.24" width="0.1524" layer="91"/>
+<pinref part="U6" gate="G$1" pin="PB2(SCK/ADC1)"/>
+<wire x1="48.26" y1="-33.02" x2="50.8" y2="-33.02" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$13" class="0">
@@ -9801,12 +9779,15 @@ Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
 </net>
 <net name="VIN2" class="0">
 <segment>
-<wire x1="17.78" y1="-119.38" x2="7.62" y2="-119.38" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="-119.38" x2="10.16" y2="-119.38" width="0.1524" layer="91"/>
+<wire x1="10.16" y1="-119.38" x2="7.62" y2="-119.38" width="0.1524" layer="91"/>
 <wire x1="7.62" y1="-119.38" x2="7.62" y2="-111.76" width="0.1524" layer="91"/>
 <label x="5.08" y="-111.76" size="1.778" layer="95"/>
 <pinref part="U$6" gate="G$1" pin="VCC"/>
 <junction x="7.62" y="-111.76"/>
 <pinref part="IC2" gate="G$1" pin="IN"/>
+<pinref part="C6" gate="G$1" pin="1"/>
+<junction x="10.16" y="-119.38"/>
 </segment>
 </net>
 <net name="N$8" class="0">
@@ -9838,6 +9819,12 @@ Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
 <pinref part="IC2" gate="G$1" pin="OUT"/>
 <wire x1="33.02" y1="-119.38" x2="35.56" y2="-119.38" width="0.1524" layer="91"/>
 <junction x="35.56" y="-119.38"/>
+<wire x1="48.26" y1="-152.4" x2="48.26" y2="-182.88" width="0.1524" layer="91"/>
+<junction x="48.26" y="-152.4"/>
+<wire x1="48.26" y1="-182.88" x2="71.12" y2="-182.88" width="0.1524" layer="91"/>
+<pinref part="U5" gate="G$1" pin="VCC"/>
+<wire x1="73.66" y1="-182.88" x2="71.12" y2="-182.88" width="0.1524" layer="91"/>
+<junction x="71.12" y="-182.88"/>
 </segment>
 </net>
 <net name="GND2" class="0">
@@ -9860,8 +9847,9 @@ Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
 <pinref part="XB2" gate="G$1" pin="GND"/>
 <junction x="71.12" y="-129.54"/>
 <pinref part="U$6" gate="G$1" pin="VSS"/>
-<wire x1="7.62" y1="-129.54" x2="17.78" y2="-129.54" width="0.1524" layer="91"/>
+<wire x1="7.62" y1="-129.54" x2="10.16" y2="-129.54" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="2"/>
+<wire x1="10.16" y1="-129.54" x2="17.78" y2="-129.54" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="-83.82" x2="53.34" y2="-83.82" width="0.1524" layer="91"/>
 <wire x1="53.34" y1="-83.82" x2="53.34" y2="-129.54" width="0.1524" layer="91"/>
 <junction x="53.34" y="-129.54"/>
@@ -9880,6 +9868,13 @@ Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
 <wire x1="25.4" y1="-127" x2="17.78" y2="-127" width="0.1524" layer="91"/>
 <wire x1="17.78" y1="-127" x2="17.78" y2="-129.54" width="0.1524" layer="91"/>
 <junction x="17.78" y="-129.54"/>
+<pinref part="C6" gate="G$1" pin="2"/>
+<wire x1="10.16" y1="-127" x2="10.16" y2="-129.54" width="0.1524" layer="91"/>
+<junction x="10.16" y="-129.54"/>
+<wire x1="40.64" y1="-165.1" x2="40.64" y2="-195.58" width="0.1524" layer="91"/>
+<junction x="40.64" y="-165.1"/>
+<pinref part="U5" gate="G$1" pin="GND"/>
+<wire x1="40.64" y1="-195.58" x2="71.12" y2="-195.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND1" class="0">
@@ -9904,8 +9899,9 @@ Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
 <pinref part="XB1" gate="G$1" pin="GND"/>
 <junction x="60.96" y="15.24"/>
 <pinref part="U$3" gate="G$1" pin="VSS"/>
-<wire x1="-2.54" y1="15.24" x2="7.62" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="-2.54" y1="15.24" x2="0" y2="15.24" width="0.1524" layer="91"/>
 <pinref part="C4" gate="G$1" pin="2"/>
+<wire x1="0" y1="15.24" x2="7.62" y2="15.24" width="0.1524" layer="91"/>
 <wire x1="35.56" y1="58.42" x2="45.72" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="45.72" y1="58.42" x2="45.72" y2="15.24" width="0.1524" layer="91"/>
 <junction x="45.72" y="15.24"/>
@@ -9929,6 +9925,14 @@ Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
 <wire x1="15.24" y1="17.78" x2="15.24" y2="15.24" width="0.1524" layer="91"/>
 <wire x1="15.24" y1="15.24" x2="7.62" y2="15.24" width="0.1524" layer="91"/>
 <junction x="7.62" y="15.24"/>
+<pinref part="C5" gate="G$1" pin="2"/>
+<wire x1="0" y1="17.78" x2="0" y2="15.24" width="0.1524" layer="91"/>
+<junction x="0" y="15.24"/>
+<wire x1="30.48" y1="-15.24" x2="7.62" y2="-15.24" width="0.1524" layer="91"/>
+<junction x="30.48" y="-15.24"/>
+<wire x1="7.62" y1="-15.24" x2="7.62" y2="-40.64" width="0.1524" layer="91"/>
+<pinref part="U6" gate="G$1" pin="GND"/>
+<wire x1="7.62" y1="-40.64" x2="20.32" y2="-40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VCC1" class="0">
@@ -9951,16 +9955,23 @@ Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
 <pinref part="IC1" gate="G$1" pin="OUT"/>
 <wire x1="22.86" y1="25.4" x2="25.4" y2="25.4" width="0.1524" layer="91"/>
 <junction x="25.4" y="25.4"/>
+<pinref part="U6" gate="G$1" pin="VCC"/>
+<wire x1="38.1" y1="7.62" x2="20.32" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="7.62" x2="20.32" y2="-27.94" width="0.1524" layer="91"/>
+<junction x="38.1" y="7.62"/>
 </segment>
 </net>
 <net name="VIN1" class="0">
 <segment>
-<wire x1="7.62" y1="25.4" x2="-2.54" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="7.62" y1="25.4" x2="0" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="0" y1="25.4" x2="-2.54" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="-2.54" y1="25.4" x2="-2.54" y2="33.02" width="0.1524" layer="91"/>
 <label x="-5.08" y="33.02" size="1.778" layer="95"/>
 <pinref part="U$3" gate="G$1" pin="VCC"/>
 <junction x="-2.54" y="33.02"/>
 <pinref part="IC1" gate="G$1" pin="IN"/>
+<pinref part="C5" gate="G$1" pin="1"/>
+<junction x="0" y="25.4"/>
 </segment>
 </net>
 <net name="TX1" class="0">
@@ -9974,6 +9985,10 @@ Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
 <wire x1="60.96" y1="53.34" x2="58.42" y2="53.34" width="0.1524" layer="91"/>
 <label x="55.88" y="53.34" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="U6" gate="G$1" pin="PB3(ADC3)"/>
+<wire x1="48.26" y1="-35.56" x2="50.8" y2="-35.56" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="RX1" class="0">
 <segment>
@@ -9985,6 +10000,10 @@ Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
 <pinref part="XB1" gate="G$1" pin="DOUT"/>
 <wire x1="60.96" y1="50.8" x2="58.42" y2="50.8" width="0.1524" layer="91"/>
 <label x="55.88" y="50.8" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U6" gate="G$1" pin="PB4(ADC2)"/>
+<wire x1="48.26" y1="-38.1" x2="50.8" y2="-38.1" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="TX2" class="0">
@@ -9998,6 +10017,10 @@ Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
 <wire x1="99.06" y1="-160.02" x2="101.6" y2="-160.02" width="0.1524" layer="91"/>
 <label x="101.6" y="-160.02" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="U5" gate="G$1" pin="PB2(SCK/ADC1)"/>
+<wire x1="99.06" y1="-187.96" x2="101.6" y2="-187.96" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="RX2" class="0">
 <segment>
@@ -10010,8 +10033,12 @@ Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
 <wire x1="99.06" y1="-162.56" x2="101.6" y2="-162.56" width="0.1524" layer="91"/>
 <label x="101.6" y="-162.56" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="U5" gate="G$1" pin="PB4(ADC2)"/>
+<wire x1="99.06" y1="-193.04" x2="101.6" y2="-193.04" width="0.1524" layer="91"/>
+</segment>
 </net>
-<net name="N$1" class="0">
+<net name="PB12" class="0">
 <segment>
 <pinref part="U4" gate="G$1" pin="PB1(MISO)"/>
 <wire x1="99.06" y1="-154.94" x2="149.86" y2="-154.94" width="0.1524" layer="91"/>
@@ -10019,12 +10046,100 @@ Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
 <pinref part="LED1" gate="G$1" pin="A"/>
 <wire x1="149.86" y1="-152.4" x2="157.48" y2="-152.4" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="U5" gate="G$1" pin="PB1(MISO)"/>
+<wire x1="99.06" y1="-185.42" x2="101.6" y2="-185.42" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="N$5" class="0">
 <segment>
 <pinref part="LED1" gate="G$1" pin="C"/>
 <pinref part="R3" gate="G$1" pin="2"/>
 <wire x1="157.48" y1="-160.02" x2="157.48" y2="-162.56" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="PB02" class="0">
+<segment>
+<pinref part="U4" gate="G$1" pin="PB0(MOSI)"/>
+<wire x1="99.06" y1="-152.4" x2="101.6" y2="-152.4" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U5" gate="G$1" pin="PB0(MOSI)"/>
+<wire x1="99.06" y1="-182.88" x2="101.6" y2="-182.88" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$7" class="0">
+<segment>
+<pinref part="U4" gate="G$1" pin="PB2(SCK/ADC1)"/>
+<wire x1="99.06" y1="-157.48" x2="101.6" y2="-157.48" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$14" class="0">
+<segment>
+<pinref part="U5" gate="G$1" pin="PB3(ADC3)"/>
+<wire x1="99.06" y1="-190.5" x2="101.6" y2="-190.5" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="PB52" class="0">
+<segment>
+<pinref part="U5" gate="G$1" pin="PB5(NRES)"/>
+<wire x1="99.06" y1="-195.58" x2="101.6" y2="-195.58" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U4" gate="G$1" pin="PB5(NRES)"/>
+<wire x1="99.06" y1="-165.1" x2="101.6" y2="-165.1" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="PB01" class="0">
+<segment>
+<pinref part="U6" gate="G$1" pin="PB0(MOSI)"/>
+<wire x1="50.8" y1="-27.94" x2="48.26" y2="-27.94" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<wire x1="88.9" y1="-15.24" x2="99.06" y2="-15.24" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="-15.24" x2="99.06" y2="-25.4" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="-25.4" x2="134.62" y2="-25.4" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="-25.4" x2="134.62" y2="-30.48" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="-15.24" x2="99.06" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="-2.54" x2="134.62" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="-2.54" x2="134.62" y2="-7.62" width="0.1524" layer="91"/>
+<junction x="99.06" y="-15.24"/>
+<pinref part="U2" gate="G$1" pin="SLEEVE"/>
+<pinref part="U3" gate="G$1" pin="SLEEVE"/>
+<pinref part="U1" gate="G$1" pin="PB0(MOSI)"/>
+<wire x1="83.82" y1="-2.54" x2="88.9" y2="-2.54" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="-2.54" x2="88.9" y2="-15.24" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="PB11" class="0">
+<segment>
+<pinref part="U6" gate="G$1" pin="PB1(MISO)"/>
+<wire x1="48.26" y1="-30.48" x2="50.8" y2="-30.48" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<wire x1="157.48" y1="-35.56" x2="147.32" y2="-35.56" width="0.1524" layer="91"/>
+<pinref part="R2" gate="G$1" pin="1"/>
+<wire x1="114.3" y1="-12.7" x2="114.3" y2="-17.78" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="-17.78" x2="147.32" y2="-17.78" width="0.1524" layer="91"/>
+<wire x1="147.32" y1="-17.78" x2="147.32" y2="-33.02" width="0.1524" layer="91"/>
+<pinref part="U3" gate="G$1" pin="RIGHT"/>
+<wire x1="147.32" y1="-33.02" x2="147.32" y2="-35.56" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="-33.02" x2="147.32" y2="-33.02" width="0.1524" layer="91"/>
+<junction x="147.32" y="-33.02"/>
+<pinref part="U1" gate="G$1" pin="PB1(MISO)"/>
+<wire x1="83.82" y1="-5.08" x2="91.44" y2="-5.08" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="-5.08" x2="91.44" y2="-12.7" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="-12.7" x2="114.3" y2="-12.7" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="PB51" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="PB5(NRES)"/>
+<wire x1="83.82" y1="-15.24" x2="86.36" y2="-15.24" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="U6" gate="G$1" pin="PB5(NRES)"/>
+<wire x1="48.26" y1="-40.64" x2="50.8" y2="-40.64" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
