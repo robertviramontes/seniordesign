@@ -358,7 +358,7 @@ UsedLibrary="/home/robert/eagle-7.5.0/lbr/zilog.lbr"
 
 [Win_1]
 Type="Control Panel"
-Loc="441 339 1365 1055"
+Loc="441 338 1365 1054"
 State=1
 Number=0
 
