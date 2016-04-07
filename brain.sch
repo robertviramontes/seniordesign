@@ -4642,10 +4642,13 @@ Simple 3.5mm common PCB mount audio jack. SKU: PRT-08032</description>
 </packages>
 <symbols>
 <symbol name="LP2950">
-<rectangle x1="-5.08" y1="-5.08" x2="2.54" y2="7.62" layer="94"/>
 <pin name="VIN" x="-10.16" y="5.08" length="middle"/>
 <pin name="GND" x="-10.16" y="-2.54" length="middle"/>
 <pin name="VOUT" x="7.62" y="5.08" length="middle" rot="R180"/>
+<wire x1="-5.08" y1="7.62" x2="2.54" y2="7.62" width="0.254" layer="94"/>
+<wire x1="2.54" y1="7.62" x2="2.54" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-5.08" x2="-5.08" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-5.08" x2="-5.08" y2="7.62" width="0.254" layer="94"/>
 </symbol>
 <symbol name="SUNNYBUDDYMOUNT">
 <wire x1="0" y1="7.62" x2="0" y2="-10.16" width="0.254" layer="94"/>
@@ -4726,6 +4729,20 @@ Simple 3.5mm common PCB mount audio jack. SKU: PRT-08032</description>
 <part name="U$2" library="seniordesign" deviceset="LP2950" device=""/>
 <part name="+3V1" library="supply1" deviceset="+3V3" device=""/>
 <part name="U$3" library="seniordesign" deviceset="SUNNYBUDDYMOUNT" device=""/>
+<part name="XB2" library="maxstream" deviceset="XBEE" device="-PRO">
+<attribute name="MPN" value=""/>
+<attribute name="OC_NEWARK" value="unknown"/>
+</part>
+<part name="U$4" library="attiny45" deviceset="ATTINY45" device="">
+<attribute name="MF" value=""/>
+<attribute name="MPN" value=""/>
+<attribute name="OC_NEWARK" value="unknown"/>
+</part>
+<part name="S2" library="switch-omron" deviceset="10-XX" device=""/>
+<part name="GND2" library="supply1" deviceset="GND" device=""/>
+<part name="U$5" library="seniordesign" deviceset="LP2950" device=""/>
+<part name="+3V2" library="supply1" deviceset="+3V3" device=""/>
+<part name="U$6" library="seniordesign" deviceset="SUNNYBUDDYMOUNT" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -4735,6 +4752,8 @@ Simple 3.5mm common PCB mount audio jack. SKU: PRT-08032</description>
 <text x="86.36" y="-15.24" size="1.778" layer="91">Switch Power</text>
 <text x="86.36" y="-10.16" size="1.778" layer="91">Bottom Tank</text>
 <text x="91.44" y="0" size="1.778" layer="91">Top Tank</text>
+<text x="73.66" y="-154.94" size="1.778" layer="91">Tx</text>
+<text x="73.66" y="-149.86" size="1.778" layer="91">Rx</text>
 </plain>
 <instances>
 <instance part="XB1" gate="G$1" x="76.2" y="43.18"/>
@@ -4760,6 +4779,17 @@ Simple 3.5mm common PCB mount audio jack. SKU: PRT-08032</description>
 <instance part="U$2" gate="G$1" x="17.78" y="20.32"/>
 <instance part="+3V1" gate="G$1" x="33.02" y="27.94"/>
 <instance part="U$3" gate="G$1" x="-7.62" y="25.4"/>
+<instance part="XB2" gate="G$1" x="86.36" y="-101.6"/>
+<instance part="U$4" gate="G$1" x="86.36" y="-152.4">
+<attribute name="OC_NEWARK" x="86.36" y="-152.4" size="1.778" layer="96" display="off"/>
+<attribute name="MF" x="86.36" y="-152.4" size="1.778" layer="96" display="off"/>
+<attribute name="MPN" x="86.36" y="-152.4" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="S2" gate="1" x="147.32" y="-99.06" rot="R270"/>
+<instance part="GND2" gate="1" x="17.78" y="-142.24"/>
+<instance part="U$5" gate="G$1" x="27.94" y="-124.46"/>
+<instance part="+3V2" gate="G$1" x="43.18" y="-116.84"/>
+<instance part="U$6" gate="G$1" x="2.54" y="-119.38"/>
 </instances>
 <busses>
 </busses>
@@ -4818,6 +4848,35 @@ Simple 3.5mm common PCB mount audio jack. SKU: PRT-08032</description>
 <wire x1="-2.54" y1="15.24" x2="7.62" y2="15.24" width="0.1524" layer="91"/>
 <wire x1="7.62" y1="15.24" x2="7.62" y2="12.7" width="0.1524" layer="91"/>
 <junction x="7.62" y="15.24"/>
+</segment>
+<segment>
+<wire x1="35.56" y1="-129.54" x2="40.64" y2="-129.54" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="-129.54" x2="71.12" y2="-129.54" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="-129.54" x2="63.5" y2="-129.54" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="-129.54" x2="40.64" y2="-129.54" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="-129.54" x2="40.64" y2="-160.02" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="-160.02" x2="76.2" y2="-160.02" width="0.1524" layer="91"/>
+<wire x1="76.2" y1="-160.02" x2="78.74" y2="-160.02" width="0.1524" layer="91"/>
+<pinref part="S2" gate="1" pin="S1"/>
+<wire x1="152.4" y1="-101.6" x2="152.4" y2="-134.62" width="0.1524" layer="91"/>
+<wire x1="152.4" y1="-134.62" x2="63.5" y2="-134.62" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="-134.62" x2="63.5" y2="-129.54" width="0.1524" layer="91"/>
+<junction x="40.64" y="-129.54"/>
+<junction x="63.5" y="-129.54"/>
+<wire x1="17.78" y1="-127" x2="17.78" y2="-129.54" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="-129.54" x2="17.78" y2="-139.7" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="-139.7" x2="35.56" y2="-139.7" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="-139.7" x2="35.56" y2="-129.54" width="0.1524" layer="91"/>
+<pinref part="GND2" gate="1" pin="GND"/>
+<junction x="17.78" y="-139.7"/>
+<pinref part="U$5" gate="G$1" pin="GND"/>
+<pinref part="XB2" gate="G$1" pin="GND"/>
+<junction x="71.12" y="-129.54"/>
+<pinref part="U$4" gate="G$1" pin="GND"/>
+<junction x="76.2" y="-160.02"/>
+<pinref part="U$6" gate="G$1" pin="VSS"/>
+<wire x1="7.62" y1="-129.54" x2="17.78" y2="-129.54" width="0.1524" layer="91"/>
+<junction x="17.78" y="-129.54"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -4892,6 +4951,15 @@ Simple 3.5mm common PCB mount audio jack. SKU: PRT-08032</description>
 <junction x="-2.54" y="33.02"/>
 <junction x="7.62" y="25.4"/>
 </segment>
+<segment>
+<wire x1="17.78" y1="-119.38" x2="7.62" y2="-119.38" width="0.1524" layer="91"/>
+<wire x1="7.62" y1="-119.38" x2="7.62" y2="-111.76" width="0.1524" layer="91"/>
+<label x="5.08" y="-111.76" size="1.778" layer="95"/>
+<pinref part="U$5" gate="G$1" pin="VIN"/>
+<pinref part="U$6" gate="G$1" pin="VCC"/>
+<junction x="7.62" y="-111.76"/>
+<junction x="17.78" y="-119.38"/>
+</segment>
 </net>
 <net name="+3V3" class="0">
 <segment>
@@ -4909,6 +4977,55 @@ Simple 3.5mm common PCB mount audio jack. SKU: PRT-08032</description>
 <pinref part="+3V1" gate="G$1" pin="+3V3"/>
 <wire x1="33.02" y1="25.4" x2="25.4" y2="25.4" width="0.1524" layer="91"/>
 <junction x="33.02" y="25.4"/>
+</segment>
+<segment>
+<pinref part="XB2" gate="G$1" pin="VCC"/>
+<wire x1="35.56" y1="-119.38" x2="35.56" y2="-76.2" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="-76.2" x2="71.12" y2="-76.2" width="0.1524" layer="91"/>
+<pinref part="U$4" gate="G$1" pin="VCC"/>
+<wire x1="96.52" y1="-144.78" x2="99.06" y2="-144.78" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="-144.78" x2="99.06" y2="-137.16" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="-137.16" x2="48.26" y2="-137.16" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="-137.16" x2="48.26" y2="-119.38" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="-119.38" x2="43.18" y2="-119.38" width="0.1524" layer="91"/>
+<pinref part="U$5" gate="G$1" pin="VOUT"/>
+<junction x="35.56" y="-119.38"/>
+<pinref part="+3V2" gate="G$1" pin="+3V3"/>
+<wire x1="43.18" y1="-119.38" x2="35.56" y2="-119.38" width="0.1524" layer="91"/>
+<junction x="43.18" y="-119.38"/>
+</segment>
+</net>
+<net name="N$7" class="0">
+<segment>
+<pinref part="XB2" gate="G$1" pin="DIN/!CONFIG"/>
+<wire x1="71.12" y1="-91.44" x2="68.58" y2="-91.44" width="0.1524" layer="91"/>
+<wire x1="68.58" y1="-91.44" x2="60.96" y2="-91.44" width="0.1524" layer="91"/>
+<wire x1="60.96" y1="-91.44" x2="60.96" y2="-154.94" width="0.1524" layer="91"/>
+<pinref part="U$4" gate="G$1" pin="PB4"/>
+<wire x1="60.96" y1="-154.94" x2="76.2" y2="-154.94" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="-91.44" x2="73.66" y2="-91.44" width="0.1524" layer="91"/>
+<junction x="71.12" y="-91.44"/>
+</segment>
+</net>
+<net name="N$8" class="0">
+<segment>
+<pinref part="XB2" gate="G$1" pin="!RESET"/>
+<wire x1="71.12" y1="-78.74" x2="53.34" y2="-78.74" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="-78.74" x2="53.34" y2="-68.58" width="0.1524" layer="91"/>
+<pinref part="S2" gate="1" pin="P"/>
+<wire x1="53.34" y1="-68.58" x2="142.24" y2="-68.58" width="0.1524" layer="91"/>
+<wire x1="142.24" y1="-68.58" x2="142.24" y2="-99.06" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$9" class="0">
+<segment>
+<pinref part="XB2" gate="G$1" pin="DOUT"/>
+<wire x1="71.12" y1="-93.98" x2="58.42" y2="-93.98" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="-93.98" x2="58.42" y2="-149.86" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="-93.98" x2="71.12" y2="-93.98" width="0.1524" layer="91"/>
+<pinref part="U$4" gate="G$1" pin="PB3"/>
+<wire x1="76.2" y1="-149.86" x2="58.42" y2="-149.86" width="0.1524" layer="91"/>
+<junction x="71.12" y="-93.98"/>
 </segment>
 </net>
 </nets>

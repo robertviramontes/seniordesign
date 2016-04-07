@@ -1933,6 +1933,25 @@ design rules under a new name.</description>
 <element name="U3" library="SparkFun-Connectors" package="AUDIO-JACK" value="" x="95.25" y="8.89" rot="R180"/>
 <element name="U$2" library="seniordesign" package="LP2950" value="LP2950" x="85.09" y="35.56" rot="R90"/>
 <element name="U$3" library="seniordesign" package="SUNNYBUDDYMOUNT" value="SUNNYBUDDYMOUNT" x="59.69" y="49.53"/>
+<element name="XB2" library="maxstream" package="XBEE-PRO" value="XBEE-PRO" x="12.7" y="15.24" rot="R90">
+<attribute name="MPN" value="" x="-24.13" y="-13.97" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MF" value="" x="-24.13" y="-13.97" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="-24.13" y="-13.97" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="OC_FARNELL" value="1337916" x="-24.13" y="-13.97" size="1.778" layer="27" rot="R90" display="off"/>
+</element>
+<element name="U$4" library="attiny45" package="SOIC8" value="ATTINY45" x="6.35" y="36.83">
+<attribute name="MPN" value="" x="-59.69" y="95.25" size="1.778" layer="27" display="off"/>
+<attribute name="MF" value="" x="-59.69" y="95.25" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="unknown" x="-59.69" y="95.25" size="1.778" layer="27" display="off"/>
+</element>
+<element name="S2" library="switch-omron" package="B3F-10XX" value="" x="17.78" y="36.83">
+<attribute name="MPN" value="B3F-1000" x="-29.21" y="99.06" size="1.778" layer="27" display="off"/>
+<attribute name="MF" value="" x="-29.21" y="99.06" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="36M3542" x="-29.21" y="99.06" size="1.778" layer="27" display="off"/>
+<attribute name="OC_FARNELL" value="176432" x="-29.21" y="99.06" size="1.778" layer="27" display="off"/>
+</element>
+<element name="U$5" library="seniordesign" package="LP2950" value="LP2950" x="26.67" y="39.37" rot="R90"/>
+<element name="U$6" library="seniordesign" package="SUNNYBUDDYMOUNT" value="SUNNYBUDDYMOUNT" x="39.37" y="34.29" rot="R180"/>
 </elements>
 <signals>
 <signal name="GND">
@@ -1943,12 +1962,22 @@ design rules under a new name.</description>
 <contactref element="S1" pad="2"/>
 <contactref element="U$2" pad="GND"/>
 <contactref element="U$3" pad="P$2"/>
+<contactref element="XB2" pad="10"/>
+<contactref element="U$4" pad="4"/>
+<contactref element="S2" pad="2"/>
+<contactref element="U$5" pad="GND"/>
+<contactref element="U$6" pad="P$2"/>
 <wire x1="84.8106" y1="43.7388" x2="78.63" y2="77.04" width="0" layer="19" extent="1-1"/>
 <wire x1="85.09" y1="36.957" x2="84.8106" y2="43.7388" width="0" layer="19" extent="1-1"/>
 <wire x1="94.605" y1="33.676" x2="85.09" y2="36.957" width="0" layer="19" extent="1-1"/>
 <wire x1="74.93" y1="17.78" x2="85.09" y2="36.957" width="0" layer="19" extent="1-1"/>
 <wire x1="74.93" y1="3.81" x2="74.93" y2="17.78" width="0" layer="19" extent="1-1"/>
 <wire x1="60.96" y1="35.56" x2="74.93" y2="17.78" width="0" layer="19" extent="1-1"/>
+<wire x1="8.245" y1="33.676" x2="74.93" y2="3.81" width="0" layer="19" extent="1-1"/>
+<wire x1="26.67" y1="40.767" x2="8.245" y2="33.676" width="0" layer="19" extent="1-1"/>
+<wire x1="21.0312" y1="39.0906" x2="8.245" y2="33.676" width="0" layer="19" extent="1-1"/>
+<wire x1="21.7" y1="4.24" x2="21.0312" y2="39.0906" width="0" layer="19" extent="1-1"/>
+<wire x1="38.1" y1="48.26" x2="21.7" y2="4.24" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$3">
 <contactref element="R2" pad="1"/>
@@ -1989,14 +2018,39 @@ design rules under a new name.</description>
 <signal name="VIN">
 <contactref element="U$2" pad="VIN"/>
 <contactref element="U$3" pad="P$1"/>
+<contactref element="U$5" pad="VIN"/>
+<contactref element="U$6" pad="P$1"/>
 <wire x1="60.96" y1="33.02" x2="85.09" y2="35.56" width="0" layer="19" extent="1-1"/>
+<wire x1="38.1" y1="50.8" x2="60.96" y2="33.02" width="0" layer="19" extent="1-1"/>
+<wire x1="26.67" y1="39.37" x2="38.1" y2="50.8" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="+3V3">
 <contactref element="XB1" pad="1"/>
 <contactref element="U$1" pad="8"/>
 <contactref element="U$2" pad="VOUT"/>
+<contactref element="XB2" pad="1"/>
+<contactref element="U$4" pad="8"/>
+<contactref element="U$5" pad="VOUT"/>
 <wire x1="90.805" y1="39.984" x2="96.63" y2="77.04" width="0" layer="19" extent="1-1"/>
 <wire x1="85.09" y1="38.354" x2="90.805" y2="39.984" width="0" layer="19" extent="1-1"/>
+<wire x1="3.7" y1="4.24" x2="85.09" y2="38.354" width="0" layer="19" extent="1-1"/>
+<wire x1="4.445" y1="39.984" x2="3.7" y2="4.24" width="0" layer="19" extent="1-1"/>
+<wire x1="26.67" y1="42.164" x2="4.445" y2="39.984" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$7">
+<contactref element="XB2" pad="3"/>
+<contactref element="U$4" pad="3"/>
+<wire x1="7.7" y1="4.24" x2="6.975" y2="33.676" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$8">
+<contactref element="XB2" pad="5"/>
+<contactref element="S2" pad="3"/>
+<wire x1="11.7" y1="4.24" x2="14.5288" y2="34.5694" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$9">
+<contactref element="XB2" pad="2"/>
+<contactref element="U$4" pad="2"/>
+<wire x1="5.7" y1="4.24" x2="5.705" y2="33.676" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>
