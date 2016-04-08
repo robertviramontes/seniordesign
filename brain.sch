@@ -9700,6 +9700,10 @@ Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
 <part name="C6" library="rcl" deviceset="C-US" device="050-025X075" value="bypass"/>
 <part name="U5" library="SparkFun-DigitalIC" deviceset="ATTINY45" device="TINY45-20-DIP" value="TINY45-20-DIP"/>
 <part name="U6" library="SparkFun-DigitalIC" deviceset="ATTINY45" device="TINY45-20-DIP" value="TINY45-20-DIP"/>
+<part name="C7" library="rcl" deviceset="C-US" device="050-025X075" value="bypass"/>
+<part name="C8" library="rcl" deviceset="C-US" device="050-025X075" value="bypass"/>
+<part name="C9" library="rcl" deviceset="C-US" device="050-025X075" value="bypass"/>
+<part name="C10" library="rcl" deviceset="C-US" device="050-025X075" value="bypass"/>
 </parts>
 <sheets>
 <sheet>
@@ -9745,6 +9749,10 @@ Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
 <instance part="C6" gate="G$1" x="10.16" y="-121.92"/>
 <instance part="U5" gate="G$1" x="86.36" y="-190.5"/>
 <instance part="U6" gate="G$1" x="35.56" y="-35.56"/>
+<instance part="C7" gate="G$1" x="25.4" y="22.86"/>
+<instance part="C8" gate="G$1" x="35.56" y="-121.92"/>
+<instance part="C9" gate="G$1" x="60.96" y="-185.42"/>
+<instance part="C10" gate="G$1" x="15.24" y="-30.48"/>
 </instances>
 <busses>
 </busses>
@@ -9821,10 +9829,14 @@ Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
 <junction x="35.56" y="-119.38"/>
 <wire x1="48.26" y1="-152.4" x2="48.26" y2="-182.88" width="0.1524" layer="91"/>
 <junction x="48.26" y="-152.4"/>
-<wire x1="48.26" y1="-182.88" x2="71.12" y2="-182.88" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="-182.88" x2="60.96" y2="-182.88" width="0.1524" layer="91"/>
 <pinref part="U5" gate="G$1" pin="VCC"/>
+<wire x1="60.96" y1="-182.88" x2="71.12" y2="-182.88" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="-182.88" x2="71.12" y2="-182.88" width="0.1524" layer="91"/>
 <junction x="71.12" y="-182.88"/>
+<pinref part="C8" gate="G$1" pin="1"/>
+<pinref part="C9" gate="G$1" pin="1"/>
+<junction x="60.96" y="-182.88"/>
 </segment>
 </net>
 <net name="GND2" class="0">
@@ -9874,7 +9886,14 @@ Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
 <wire x1="40.64" y1="-165.1" x2="40.64" y2="-195.58" width="0.1524" layer="91"/>
 <junction x="40.64" y="-165.1"/>
 <pinref part="U5" gate="G$1" pin="GND"/>
-<wire x1="40.64" y1="-195.58" x2="71.12" y2="-195.58" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="-195.58" x2="60.96" y2="-195.58" width="0.1524" layer="91"/>
+<pinref part="C8" gate="G$1" pin="2"/>
+<wire x1="60.96" y1="-195.58" x2="71.12" y2="-195.58" width="0.1524" layer="91"/>
+<wire x1="35.56" y1="-127" x2="35.56" y2="-129.54" width="0.1524" layer="91"/>
+<junction x="35.56" y="-129.54"/>
+<pinref part="C9" gate="G$1" pin="2"/>
+<wire x1="60.96" y1="-190.5" x2="60.96" y2="-195.58" width="0.1524" layer="91"/>
+<junction x="60.96" y="-195.58"/>
 </segment>
 </net>
 <net name="GND1" class="0">
@@ -9932,7 +9951,14 @@ Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
 <junction x="30.48" y="-15.24"/>
 <wire x1="7.62" y1="-15.24" x2="7.62" y2="-40.64" width="0.1524" layer="91"/>
 <pinref part="U6" gate="G$1" pin="GND"/>
-<wire x1="7.62" y1="-40.64" x2="20.32" y2="-40.64" width="0.1524" layer="91"/>
+<wire x1="7.62" y1="-40.64" x2="15.24" y2="-40.64" width="0.1524" layer="91"/>
+<pinref part="C7" gate="G$1" pin="2"/>
+<wire x1="15.24" y1="-40.64" x2="20.32" y2="-40.64" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="17.78" x2="25.4" y2="15.24" width="0.1524" layer="91"/>
+<junction x="25.4" y="15.24"/>
+<pinref part="C10" gate="G$1" pin="2"/>
+<wire x1="15.24" y1="-35.56" x2="15.24" y2="-40.64" width="0.1524" layer="91"/>
+<junction x="15.24" y="-40.64"/>
 </segment>
 </net>
 <net name="VCC1" class="0">
@@ -9959,6 +9985,10 @@ Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
 <wire x1="38.1" y1="7.62" x2="20.32" y2="7.62" width="0.1524" layer="91"/>
 <wire x1="20.32" y1="7.62" x2="20.32" y2="-27.94" width="0.1524" layer="91"/>
 <junction x="38.1" y="7.62"/>
+<pinref part="C7" gate="G$1" pin="1"/>
+<pinref part="C10" gate="G$1" pin="1"/>
+<wire x1="20.32" y1="-27.94" x2="15.24" y2="-27.94" width="0.1524" layer="91"/>
+<junction x="20.32" y="-27.94"/>
 </segment>
 </net>
 <net name="VIN1" class="0">
