@@ -9928,11 +9928,7 @@ Source: http://www.onsemi.co.jp .. LM317M-D.PDF</description>
 <wire x1="53.34" y1="-15.24" x2="53.34" y2="-45.72" width="0.1524" layer="91"/>
 <pinref part="R2" gate="G$1" pin="2"/>
 <pinref part="R1" gate="G$1" pin="2"/>
-<wire x1="167.64" y1="-10.16" x2="167.64" y2="-12.7" width="0.1524" layer="91"/>
-<wire x1="170.18" y1="5.08" x2="170.18" y2="-12.7" width="0.1524" layer="91"/>
-<wire x1="170.18" y1="-12.7" x2="167.64" y2="-12.7" width="0.1524" layer="91"/>
-<junction x="167.64" y="-12.7"/>
-<wire x1="167.64" y1="-12.7" x2="167.64" y2="-35.56" width="0.1524" layer="91"/>
+<wire x1="167.64" y1="-10.16" x2="167.64" y2="-35.56" width="0.1524" layer="91"/>
 <junction x="167.64" y="-35.56"/>
 <wire x1="167.64" y1="-35.56" x2="167.64" y2="-45.72" width="0.1524" layer="91"/>
 <wire x1="167.64" y1="-45.72" x2="53.34" y2="-45.72" width="0.1524" layer="91"/>
